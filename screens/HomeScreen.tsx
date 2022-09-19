@@ -1,10 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Button, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 
-const HomeScreen: React.FC = () => {
+type Props = {
+    navigation: any
+}
+
+const HomeScreen: React.FC<Props> = ({navigation}) => {
   return (
     <View style={styles.screen}>
       <Text>HomeScreen</Text>
+      <Button title='Profile' onPress={() => navigation.navigate('Profile')} />
     </View>
   )
 }

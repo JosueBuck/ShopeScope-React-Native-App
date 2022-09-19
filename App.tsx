@@ -4,17 +4,44 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
 import RecipesScreen from './screens/RecipesScreen';
 import ListsScreen from './screens/ListsScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
+const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+let isLoggedIn: boolean = true;
+
+function Content(): JSX.Element {
   return (
-    <NavigationContainer>
       <Tab.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
         <Tab.Screen name='Home' component={HomeScreen} />
         <Tab.Screen name='RecipesOverview' component={RecipesScreen} />
         <Tab.Screen name='ListsOverview' component={ListsScreen} />
       </Tab.Navigator>
+  )
+}
+
+export default function App(): JSX.Element {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        {
+          isLoggedIn ? (
+            <Stack.Group>
+              <Stack.Screen name='Content' component={Content} />
+              <Stack.Screen name='Profile' component={ProfileScreen} />
+            </Stack.Group>
+          ) : (
+            <Stack.Group>
+              <Stack.Screen name='Login' component={LoginScreen} />
+              <Stack.Screen name='Register' component={RegisterScreen} />
+            </Stack.Group>
+          )
+        }
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }

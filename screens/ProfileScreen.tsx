@@ -1,10 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Button, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 
-const ProfileScreen: React.FC = () => {
+type Props = {
+    navigation: any
+}
+
+const ProfileScreen: React.FC<Props> = ({navigation}) => {
   return (
     <View style={styles.screen}>
       <Text>ProfileScreen</Text>
+      <Button title='Go Back' onPress={() => navigation.goBack()}/>
     </View>
   )
 }
