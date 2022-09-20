@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import { useFonts } from 'expo-font';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -24,7 +25,19 @@ function Content(): JSX.Element {
   )
 }
 
-export default function App(): JSX.Element {
+export default function App(): JSX.Element | null {
+
+  const [fontsLoaded] = useFonts({
+    'American-Typewriter-Regular': require('./assets/fonts/American-Typewriter-Regular.ttf'),
+    'American-Typewriter-Light': require('./assets/fonts/American-Typewriter-Light.ttf'),
+    'American-Typewriter-Medium': require('./assets/fonts/American-Typewriter-Medium.ttf'),
+    'American-Typewriter-Bold': require('./assets/fonts/American-Typewriter-Bold.ttf'),
+  });
+  
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
