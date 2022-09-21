@@ -21,6 +21,7 @@ function TabNavigation(): JSX.Element {
   return (
       <Tab.Navigator initialRouteName='Home' screenOptions={({route}) => ({
         headerShown: false,
+        tabBarLabelStyle: {fontFamily: 'American-Typewriter-Medium'},
         tabBarIcon: ({ focused, color, size }) => {
           let iconName: string = '';
           if (route.name === 'Home') {
