@@ -9,8 +9,8 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { useFonts } from 'expo-font';
-import FeatherIcon from './components/icons/FeatherIcon';
 import IonIconIcon from './components/icons/IonIconIcon';
+import { colors } from './assets/colors/colors';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -33,9 +33,11 @@ function TabNavigation(): JSX.Element {
           } else if (route.name === 'ListsOverview') {
             iconName = focused ? 'ios-receipt' : 'ios-receipt-outline';
           } 
-
+          
           return <IonIconIcon name={iconName} size={size} color={color} />
-        }
+        },
+        tabBarInactiveTintColor: colors.grey,
+        tabBarActiveTintColor: colors.grey
       })}>
         <Tab.Screen options={{title: 'Recipes'}} name='RecipesOverview' component={RecipesScreen} />
         <Tab.Screen options={{title: 'Home'}} name='Home' component={HomeScreen} />
