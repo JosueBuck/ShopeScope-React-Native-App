@@ -9,18 +9,36 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { useFonts } from 'expo-font';
+import FeatherIcon from './components/icons/FeatherIcon';
+import IonIconIcon from './components/icons/IonIconIcon';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 let isLoggedIn: boolean = true;
 
-function Content(): JSX.Element {
+function TabNavigation(): JSX.Element {
   return (
-      <Tab.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
-        <Tab.Screen name='Home' component={HomeScreen} />
-        <Tab.Screen name='RecipesOverview' component={RecipesScreen} />
-        <Tab.Screen name='ListsOverview' component={ListsScreen} />
+      <Tab.Navigator initialRouteName='Home' screenOptions={({route}) => ({
+        headerShown: false,
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName: string = '';
+          if (route.name === 'Home') {
+            iconName = focused
+              ? 'ios-home'
+              : 'ios-home-outline';
+          } else if (route.name === 'RecipesOverview') {
+            iconName = focused ? 'book' : 'book-outline';
+          } else if (route.name === 'ListsOverview') {
+            iconName = focused ? 'ios-receipt' : 'ios-receipt-outline';
+          } 
+
+          return <IonIconIcon name={iconName} size={size} color={color} />
+        }
+      })}>
+        <Tab.Screen options={{title: 'Recipes'}} name='RecipesOverview' component={RecipesScreen} />
+        <Tab.Screen options={{title: 'Home'}} name='Home' component={HomeScreen} />
+        <Tab.Screen options={{title: 'Lists'}} name='ListsOverview' component={ListsScreen} />
       </Tab.Navigator>
   )
 }
@@ -44,7 +62,7 @@ export default function App(): JSX.Element | null {
         {
           isLoggedIn ? (
             <Stack.Group>
-              <Stack.Screen name='Content' component={Content} />
+              <Stack.Screen name='Content' component={TabNavigation} />
               <Stack.Screen name='Profile' component={ProfileScreen} />
             </Stack.Group>
           ) : (
