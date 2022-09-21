@@ -1,8 +1,8 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import CustomMediumText from '../components/CustomMediumText';
-import CustomLBoldText from '../components/CustomBoldText';
-import CustomLightText from '../components/CustomLightText';
+import CustomMediumText from '../components/customTexts/CustomMediumText';
+import CustomLBoldText from '../components/customTexts/CustomBoldText';
+import CustomLightText from '../components/customTexts/CustomLightText';
 
 type Props = {
     navigation: any
