@@ -3,6 +3,7 @@ import React from 'react';
 import BasicScreenWrapper from '../components/BasicScreenWrapper';
 import BasisScreenTitle from '../components/BasisScreenTitle';
 import { colors } from '../assets/colors/colors';
+import { IconName } from '../assets/icons/iconNames';
 
 type Props = {
     navigation: any
@@ -13,7 +14,7 @@ const HomeScreen: React.FC<Props> = ({navigation}) => {
 
   return (
     <BasicScreenWrapper>
-      <BasisScreenTitle func={() => navigation.navigate('Profile')} title='Hey Josue' subTitle='Ready to plan your week?' iconName='person-circle-sharp' iconSize={35} iconColor={colors.grey}/>
+      <BasisScreenTitle func={() => navigation.navigate('Profile')} title='Hey Josue' subTitle='Ready to plan your week?' iconName={IconName.PROFILE} iconSize={35} iconColor={colors.grey}/>
     </BasicScreenWrapper>
 
   )
@@ -27,13 +28,4 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     }
-})
-
-
-    {/* <View style={styles.screen}>
-      <CustomLightText fontSize={35}>Light Text</CustomLightText>
-      <CustomMediumText fontSize={35}>Medium Text</CustomMediumText>
-      <CustomLBoldText fontSize={35}>Bold Text</CustomLBoldText>
-      <Text>HomeScreen</Text>
-      <Button title='Profile' onPress={() => navigation.navigate('Profile')} />
-    </View> */}
+});
