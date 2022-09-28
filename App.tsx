@@ -10,7 +10,8 @@ import RegisterScreen from './screens/RegisterScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { useFonts } from 'expo-font';
 import IonIconIcon from './components/icons/IonIconIcon';
-import { colors } from './assets/colors/colors';
+import { colors } from './assets/globalStyling/colors';
+import { basicShadow } from './assets/globalStyling/shadows';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -21,6 +22,15 @@ function TabNavigation(): JSX.Element {
   return (
       <Tab.Navigator initialRouteName='Home' screenOptions={({route}) => ({
         headerShown: false,
+        tabBarStyle: {
+          borderTopWidth: 0,
+          borderColor: colors.white,
+          shadowColor: basicShadow.shadowColor,
+          shadowOffset: basicShadow.shadowOffset,
+          shadowOpacity: basicShadow.shadowOpacity,
+          shadowRadius: basicShadow.shadowRadius,
+          elevation: basicShadow.elevation
+        },
         tabBarLabelStyle: {fontFamily: 'American-Typewriter-Medium'},
         tabBarIcon: ({ focused, color, size }) => {
           let iconName: string = '';
