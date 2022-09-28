@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { colors } from '../assets/globalStyling/colors';
 
 type Props = {
     children: JSX.Element | JSX.Element[]
@@ -9,9 +10,9 @@ type Props = {
 
 const BasicScreenWrapper: React.FC<Props> = ({children}) => {
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1, overflow: 'visible', backgroundColor: colors.darkerWhite}}>
         <View style={styles.wrapper}>
-            <ScrollView>
+            <ScrollView style={styles.scrollView}>
                 {children}
                 <StatusBar />
             </ScrollView>
@@ -28,6 +29,10 @@ const styles = StyleSheet.create({
         width: '90%',
         alignSelf: 'center',
         paddingTop: 20,
-        flex: 1
+        flex: 1,
+        overflow: 'visible'
+    },
+    scrollView: {
+        overflow: 'visible'
     }
 })
