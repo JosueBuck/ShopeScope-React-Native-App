@@ -15,9 +15,10 @@ export interface IWeek {
 export interface IDay {
     _id: string, 
     name: string, 
-    breakfast: IRecipe[], 
-    lunch: IRecipe[],
-    dinner: IRecipe[]
+    shortName: string,
+    breakfast: IDayRecipe[], 
+    lunch: IDayRecipe[],
+    dinner: IDayRecipe[]
 }
 
 export interface ICreateDayRecipeData {
@@ -26,7 +27,7 @@ export interface ICreateDayRecipeData {
     recipe: ICreateDayRecipe
 }
 
-export interface IDdayRecipeData {
+export interface IDayRecipeData {
     dayId: string, 
     type: string, 
     recipe: IDayRecipe
