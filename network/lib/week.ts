@@ -1,4 +1,4 @@
-import { ICreateDayRecipeData, IDdayRecipeData, IWeekResponseDTO } from "../../models/week.model";
+import { ICreateDayRecipeData, IDayRecipeData, IWeekResponseDTO } from "../../models/week.model";
 import axiosClient from "../apiClient";
 import { triggerErrorMessage } from "../useApi";
 
@@ -13,7 +13,7 @@ function getUserWeek(_userId: string, ) {
         return response.data.responseData;
     }).catch(error => {
         triggerErrorMessage(error.response.data);
-        console.log(error);
+        console.log(error.message);
         return null;
     }
     );
@@ -50,7 +50,7 @@ function addRecipeToDay(_userId: string, _newDayRecipe: ICreateDayRecipeData) {
     );
 }
 
-function removeRecipeFromDay(_userId: string, _dayRecipeData: IDdayRecipeData) {
+function removeRecipeFromDay(_userId: string, _dayRecipeData: IDayRecipeData) {
     return axiosClient.request<IWeekResponseDTO>({
         method: 'delete',
         url: `${basicPath}/removeRecipeFromDay/${_userId}`,

@@ -1,4 +1,4 @@
-import { ICreateDayRecipe, IDayRecipe, IRecipe } from "./recipes.model"
+import { ICreateDayRecipe, IDayRecipe } from "./recipes.model"
 
 export interface IWeekResponseDTO {
     message: string,

@@ -5,6 +5,7 @@ import { colors } from '../assets/globalStyling/colors';
 import { IconName } from '../assets/icons/iconNames';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import WeekOverview from '../components/week/WeekOverview';
+import LatestRecipesOverview from '../components/recipes/LatestRecipesOverview';
 
 type Props = {
   navigation: any
@@ -30,6 +31,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
     <BasicScreenWrapper>
       <BasisScreenTitle func={() => navigation.navigate('Profile')} title='Hey Josue' subTitle='Ready to plan your week?' iconName={IconName.PROFILE} iconSize={35} iconColor={colors.grey} />
       <WeekOverview navigation={navigation} />
+      <LatestRecipesOverview navigation={navigation} />
     </BasicScreenWrapper>
 
   )

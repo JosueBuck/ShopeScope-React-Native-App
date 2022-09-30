@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -12,7 +12,7 @@ const BasicScreenWrapper: React.FC<Props> = ({children}) => {
   return (
     <SafeAreaView style={{flex: 1, overflow: 'visible', backgroundColor: colors.darkerWhite}}>
         <View style={styles.wrapper}>
-            <ScrollView style={styles.scrollView}>
+            <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
                 {children}
                 <StatusBar />
             </ScrollView>
