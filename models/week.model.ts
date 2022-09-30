@@ -9,7 +9,8 @@ export interface IWeekResponseDTO {
 export interface IWeek {
     _id: string, 
     userId: string, 
-    week: IDay[]
+    week: IDay[],
+    selectedWeekList: string
 }
 
 export interface IDay {

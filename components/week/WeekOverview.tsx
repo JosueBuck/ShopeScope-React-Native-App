@@ -80,7 +80,7 @@ const WeekOverview: React.FC<Props> = ({ navigation }) => {
                 const dayRecipes: IDayRecipe[] = day.breakfast.concat(day.dinner, day.lunch);
                 weekRecipes = weekRecipes.concat(dayRecipes);
             })
-            listApi.addWeekRecipesToList(userId, userWeekListId, weekRecipes);
+            listApi.addWeekRecipesToList(userId, weekData.selectedWeekList, weekRecipes);
         }
         
     }
