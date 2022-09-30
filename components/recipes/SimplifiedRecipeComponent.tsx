@@ -14,7 +14,7 @@ type Props = {
     customContainerStyling?: ViewStyle | ViewStyle[]
 }
 
-const SimplifiedRecipe: React.FC<Props> = ({ navigation, recipeData, customContainerStyling }) => {
+const SimplifiedRecipeComponent: React.FC<Props> = ({ navigation, recipeData, customContainerStyling }) => {
 
 
 
@@ -41,7 +41,7 @@ const SimplifiedRecipe: React.FC<Props> = ({ navigation, recipeData, customConta
     )
 }
 
-export default SimplifiedRecipe
+export default SimplifiedRecipeComponent
 
 const styles = StyleSheet.create({
     recipeContainer: {

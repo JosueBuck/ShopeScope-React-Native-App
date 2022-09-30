@@ -1,7 +1,7 @@
 import { FlatList, ListRenderItemInfo, StyleSheet, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import CustomMediumText from '../customTexts/CustomMediumText';
-import SimplifiedRecipe from './SimplifiedRecipe';
+import SimplifiedRecipeComponent from './SimplifiedRecipeComponent';
 import { ISimplifiedUserRecipe } from '../../models/recipes.model';
 import BasicScreenLoadingComponent from '../BasicScreenLoadingComponent';
 import recipeApi from '../../network/lib/recipes';
@@ -16,7 +16,7 @@ const LatestRecipesOverview: React.FC<Props> = ({ navigation }) => {
   const [recipes, setRecipes] = useState<ISimplifiedUserRecipe[] | null>(null);
 
   const renderItem = ( item: ListRenderItemInfo<ISimplifiedUserRecipe> ) => {
-    return <SimplifiedRecipe navigation={navigation} recipeData={item.item} customContainerStyling={styles.customContainerStyle} />
+    return <SimplifiedRecipeComponent navigation={navigation} recipeData={item.item} customContainerStyling={styles.customContainerStyle} />
   }
 
   useEffect(() => {
