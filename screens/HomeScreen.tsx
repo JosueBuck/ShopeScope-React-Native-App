@@ -1,31 +1,42 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import CustomMediumText from '../components/customTexts/CustomMediumText';
-import CustomLBoldText from '../components/customTexts/CustomBoldText';
-import CustomLightText from '../components/customTexts/CustomLightText';
+import React, { useEffect } from 'react';
+import BasicScreenWrapper from '../components/BasicScreenWrapper';
+import BasisScreenTitle from '../components/BasisScreenTitle';
+import { colors } from '../assets/globalStyling/colors';
+import { IconName } from '../assets/icons/iconNames';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import WeekOverview from '../components/week/WeekOverview';
+import LatestRecipesOverview from '../components/recipes/LatestRecipesOverview';
+import WeekListOverview from '../components/lists/WeekListOverview';
 
 type Props = {
-    navigation: any
+  navigation: any
 }
 
-const HomeScreen: React.FC<Props> = ({navigation}) => {
+const HomeScreen: React.FC<Props> = ({ navigation }) => {
+
+  const userIdPlaceholder: string = '63327aa74c96ea744f2d24c6';
+
+  const storeUserIdData = async (value: string) => {
+    try {
+      await AsyncStorage.setItem('@storage_Key', value)
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  useEffect(() => {
+    storeUserIdData(userIdPlaceholder);
+  }, [])
+
   return (
-    <View style={styles.screen}>
-      <CustomLightText fontSize={35}>Light Text</CustomLightText>
-      <CustomMediumText fontSize={35}>Medium Text</CustomMediumText>
-      <CustomLBoldText fontSize={35}>Bold Text</CustomLBoldText>
-      <Text>HomeScreen</Text>
-      <Button title='Profile' onPress={() => navigation.navigate('Profile')} />
-    </View>
+    <BasicScreenWrapper>
+      <BasisScreenTitle func={() => navigation.navigate('Profile')} title='Hey Josue' subTitle='Ready to plan your week?' iconName={IconName.PROFILE} iconSize={35} iconColor={colors.grey} />
+      <WeekOverview navigation={navigation} />
+      <LatestRecipesOverview navigation={navigation} />
+      <WeekListOverview navigation={navigation} />
+    </BasicScreenWrapper>
+
   )
 }
 
-export default HomeScreen
-
-const styles = StyleSheet.create({
-    screen: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-})
+export default HomeScreen;

@@ -10,7 +10,7 @@ import RegisterScreen from './screens/RegisterScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { useFonts } from 'expo-font';
 import IonIconIcon from './components/icons/IonIconIcon';
-import { colors } from './assets/colors/colors';
+import { colors } from './assets/globalStyling/colors';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();

@@ -11,7 +11,7 @@ interface IColors {
 export const colors: IColors = {
     white: '#fff',
     darkerWhite: '#F7F9FC',
-    lighterGrey: '#808080', 
+    lighterGrey: '#C8C8C8', 
     grey: '#707070',
     darkerGrey: '#666666',
     green: '#658B0F',

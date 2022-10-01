@@ -1,15 +1,17 @@
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, ViewStyle } from 'react-native';
 import React from 'react';
-import { colors } from '../../assets/colors/colors';
+import { colors } from '../../assets/globalStyling/colors';
 
 type Props = {
     children: React.ReactNode,
-    fontSize?: number
+    fontSize?: number,
+    customColor?: string,
+    customStyling?: ViewStyle | ViewStyle[]
 }
 
-const CustomMediumText: React.FC<Props> = ({children, fontSize}) => {
+const CustomMediumText: React.FC<Props> = ({children, fontSize, customColor, customStyling}) => {
   return (
-      <Text style={[{fontSize: fontSize} ,styles.text]}>{children}</Text>
+      <Text style={[{fontSize: fontSize} ,styles.text, {color: customColor ? customColor : colors.grey}, customStyling]}>{children}</Text>
   )
 }
 
@@ -17,7 +19,6 @@ export default CustomMediumText;
 
 const styles = StyleSheet.create({
     text: {
-        color: colors.grey,
         fontFamily: 'American-Typewriter-Medium',
     }
 })
