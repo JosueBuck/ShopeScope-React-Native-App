@@ -44,15 +44,17 @@ function deleteRecipe(_userId: string, _recipeId: string) {
     });
 }
 
-function getSimplifiedUserRecipe(_userId: string) {
+function getSimplifiedUserRecipes(_userId: string) {
     return axiosClient.request<ISimplifiedUserRecipeResponseDTO>({
         method: 'get',
         url: `${basicPath}/getSimplifiedUserRecipes/${_userId}`,
     }).then((response) => {
+        console.log(response.data.responseData);
         return response.data.responseData;
     }).catch(error => {
         triggerErrorMessage(error.response.data);
         console.log(error.response.data);
+        return null;
     });
 }
 
@@ -65,21 +67,24 @@ function getLatestSimplifiedUserRecipes(_userId: string) {
     }).catch(error => {
         triggerErrorMessage(error.response.data);
         console.log(error.response.data);
+        return null;
     });
 }
 
-function getSimplifiedUserRecipesOfRecipeType(_userId: string, _recipeType: RecipeType[]) {
+function getSimplifiedUserRecipesWithFilter(_userId: string, _searchValue: string, _recipeType: RecipeType[]) {
     return axiosClient.request<ISimplifiedUserRecipeResponseDTO>({
         method: 'post',
-        url: `${basicPath}/getSimplifiedUserRecipesOfRecipeType/${_userId}`,
+        url: `${basicPath}/getSimplifiedUserRecipesWithFilter/${_userId}`,
         data: {
-            recipeType: _recipeType
+            recipeType: _recipeType,
+            searchValue: _searchValue
         }
     }).then((response) => {
         return response.data.responseData;
     }).catch(error => {
         triggerErrorMessage(error.response.data);
         console.log(error.response.data);
+        return null;
     });
 }
 
@@ -88,7 +93,7 @@ export default {
     getRecipe,
     createRecipe,
     deleteRecipe,
-    getSimplifiedUserRecipe,
+    getSimplifiedUserRecipes,
     getLatestSimplifiedUserRecipes,
-    getSimplifiedUserRecipesOfRecipeType
+    getSimplifiedUserRecipesWithFilter
 }

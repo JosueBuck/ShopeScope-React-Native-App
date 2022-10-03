@@ -5,17 +5,24 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../assets/globalStyling/colors';
 
 type Props = {
-    children: JSX.Element | JSX.Element[]
+    children: JSX.Element | JSX.Element[],
+    scrollable: boolean
 }
 
-const BasicScreenWrapper: React.FC<Props> = ({children}) => {
+const BasicScreenWrapper: React.FC<Props> = ({children, scrollable}) => {
   return (
     <SafeAreaView style={{flex: 1, overflow: 'visible', backgroundColor: colors.darkerWhite}}>
         <View style={styles.wrapper}>
-            <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
+            {
+                scrollable ? 
+                <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
                 {children}
                 <StatusBar />
             </ScrollView>
+            :
+            <>{children}</>
+            }
+            
         </View>
     </SafeAreaView>
     

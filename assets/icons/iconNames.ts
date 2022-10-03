@@ -6,5 +6,10 @@ export enum IconName {
     TRASH = 'ios-trash-outline',
     SEND = 'ios-send-outline',
     CLOCK = 'ios-time-outline',
-    FOOD = 'ios-fast-food'
+    FOOD = 'ios-fast-food',
+    SEARCH = 'ios-search-outline',
+    FILTER = 'ios-filter-outline',
+    BACKSPACE = 'ios-backspace-outline',
+    CHECK = 'ios-checkmark-outline',
+    RELOAD = 'ios-reload-outline'
 }

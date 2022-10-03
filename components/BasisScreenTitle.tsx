@@ -4,12 +4,12 @@ import CustomMediumText from './customTexts/CustomMediumText';
 import PressableIcon from './icons/PressableIcon';
 
 type Props = {
-    func: any,
     title: string, 
     subTitle: string,
     iconName?: string,
     iconSize?: number,
     iconColor?: string,
+    func?: any
 }
 
 const BasisScreenTitle: React.FC<Props> = ({func, title, subTitle, iconName, iconSize, iconColor}) => {
@@ -18,7 +18,7 @@ const BasisScreenTitle: React.FC<Props> = ({func, title, subTitle, iconName, ico
         <View style={styles.titleFlexView}>
             <CustomMediumText fontSize={35}>{title}</CustomMediumText>
             {
-                iconName && iconSize && iconColor ? 
+                iconName && iconSize && iconColor && func ?
                 
                 <PressableIcon func={func} iconName={iconName} iconSize={iconSize} iconColor={iconColor} />
                 :
@@ -35,7 +35,7 @@ export default BasisScreenTitle
 
 const styles = StyleSheet.create({
     titleContainer: {
-        width: '100%'
+        width: '100%',
     },
     titleFlexView: {
         flexDirection: 'row',
