@@ -29,7 +29,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
   }, [])
 
   return (
-    <BasicScreenWrapper>
+    <BasicScreenWrapper scrollable={true}>
       <BasisScreenTitle func={() => navigation.navigate('Profile')} title='Hey Josue' subTitle='Ready to plan your week?' iconName={IconName.PROFILE} iconSize={35} iconColor={colors.grey} />
       <WeekOverview navigation={navigation} />
       <LatestRecipesOverview navigation={navigation} />

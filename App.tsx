@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
-import RecipesScreen from './screens/RecipesScreen';
+import RecipesOverviewScreen from './screens/RecipesOverviewScreen';
 import ListsScreen from './screens/ListsScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './screens/LoginScreen';
@@ -39,7 +39,7 @@ function TabNavigation(): JSX.Element {
         tabBarInactiveTintColor: colors.grey,
         tabBarActiveTintColor: colors.grey
       })}>
-        <Tab.Screen options={{title: 'Recipes'}} name='RecipesOverview' component={RecipesScreen} />
+        <Tab.Screen options={{title: 'Recipes'}} name='RecipesOverview' component={RecipesOverviewScreen} />
         <Tab.Screen options={{title: 'Home'}} name='Home' component={HomeScreen} />
         <Tab.Screen options={{title: 'Lists'}} name='ListsOverview' component={ListsScreen} />
       </Tab.Navigator>
