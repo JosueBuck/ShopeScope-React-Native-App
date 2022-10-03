@@ -1,13 +1,13 @@
-import { ImageBackground, Pressable, StyleSheet, Text, View, ViewStyle } from 'react-native';
+import { ImageBackground, Pressable, StyleSheet, View, ViewStyle } from 'react-native';
 import React from 'react';
-import { IList } from '../../models/lists.model';
+import { IList, ISimplifiedList } from '../../models/lists.model';
 import { basicShadow } from '../../assets/globalStyling/shadows';
 import { colors } from '../../assets/globalStyling/colors';
 import CustomMediumText from '../customTexts/CustomMediumText';
 
 type Props = {
     navigation: any,
-    listData: IList,
+    listData: IList | ISimplifiedList,
     strechable: boolean,
     customContainerStyling?: ViewStyle | ViewStyle[]
 }
@@ -15,14 +15,13 @@ type Props = {
 const ListComponent: React.FC<Props> = ({ navigation, listData, strechable, customContainerStyling }) => {
     return (
         <Pressable onPress={() => navigation.navigate('Content', {screen: 'ListsOverview'})} style={[styles.listContainer, basicShadow, strechable ? styles.strechable : styles.fix, customContainerStyling]}>
-            <ImageBackground imageStyle={styles.image} style={styles.imageContainer} source={{ uri: listData.listPictureUrl }} />
+            <ImageBackground imageStyle={styles.image} style={ strechable ? styles.strechableImageContainer : styles.fixImageContainer} source={{ uri: listData.listPictureUrl }} />
             <View style={styles.listInfoContainer}>
                 <CustomMediumText>{listData.name}</CustomMediumText>
                 <View style={[styles.itemCounterContainer, basicShadow]}>
                     <CustomMediumText>{listData.itemCounter}</CustomMediumText>
                 </View>
             </View>
-
         </Pressable>
     )
 }
@@ -33,17 +32,22 @@ const styles = StyleSheet.create({
     listContainer: {
         height: 180,
         backgroundColor: colors.white,
-        borderRadius: 15
+        borderRadius: 15,
+        overflow: 'visible'
     },
     strechable: {
         width: '100%'
     },
     fix: {
-
+        height: 200,
+        width: 160
     },
-    imageContainer: {
+    strechableImageContainer: {
         width: '100%',
         height: 140
+    },
+    fixImageContainer: {
+        height: 160
     },
     image: {
         borderRadius: 15

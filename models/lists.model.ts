@@ -6,6 +6,12 @@ export interface IListsResponseDTO {
     statusCode: number
 }
 
+export interface ISimplifiedListsResponseDTO {
+    message: string,
+    responseData: ISimplifiedList[],
+    statusCode: number
+}
+
 export interface ICreateList {
     name: string, 
     description: string,
@@ -29,4 +35,13 @@ export interface IListSettings {
     name: string, 
     description: string, 
     listPictureUrl: string
+}
+
+export interface ISimplifiedList {
+
+    _id: string;
+    name: string;
+    itemCounter: number;
+    listPictureUrl: string;
+
 }

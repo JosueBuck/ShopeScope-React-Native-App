@@ -90,7 +90,7 @@ export interface IIngredient {
 }
 
 export interface ICreateDayRecipe {
-    recipeName: string, 
+    name: string, 
     garnish: string, 
     originalRecipeId: string, 
     recipePictureUrl: string, 
@@ -100,7 +100,7 @@ export interface ICreateDayRecipe {
 
 export interface IDayRecipe {
     _id: string, 
-    recipeName: string, 
+    name: string, 
     garnish: string, 
     originalRecipeId: string, 
     recipePictureUrl: string, 

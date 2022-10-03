@@ -21,7 +21,7 @@ const DayRecipeComponent: React.FC<Props> = ({ recipeData, onPressRemove, onSele
             <ImageBackground imageStyle={styles.backgroundImage} style={styles.backgroundImageContainer} source={{ uri: recipeData.recipePictureUrl }} resizeMode='cover'>
                 <View style={styles.contentWrapper}>
                     <Pressable onPress={() => onSelectDayRecipe(recipeData)} style={styles.recipeTextContainer}>
-                        <CustomBoldText fontSize={20}>{recipeData.recipeName}</CustomBoldText>
+                        <CustomBoldText fontSize={20}>{recipeData.name}</CustomBoldText>
                         <CustomMediumText fontSize={18}>{recipeData.garnish}</CustomMediumText>
                     </Pressable>
                     <PressableIcon iconName={IconName.REMOVE} iconColor={colors.grey} iconSize={25} func={() => onPressRemove(recipeData)}/>

@@ -1,4 +1,4 @@
-import { ICreateList, IListSettings, IListsResponseDTO } from "../../models/lists.model";
+import { ICreateList, IListSettings, IListsResponseDTO, ISimplifiedListsResponseDTO } from "../../models/lists.model";
 import { IDayRecipe, IListItem, INewListItem, IRecipeListIngredient } from "../../models/recipes.model";
 import axiosClient from "../apiClient";
 import { triggerErrorMessage } from "../useApi";
@@ -83,7 +83,7 @@ function getList(_listId: string) {
 }
 
 function getSimplifiedUserLists(_userId: string) {
-    return axiosClient.request<IListsResponseDTO>({
+    return axiosClient.request<ISimplifiedListsResponseDTO>({
         method: 'get',
         url: `${basicPath}/getSimplifiedUserLists/${_userId}`,
     }).then((response) => {
