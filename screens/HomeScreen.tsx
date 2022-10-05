@@ -6,7 +6,7 @@ import { IconName } from '../assets/icons/iconNames';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import WeekOverview from '../components/week/WeekOverview';
 import LatestRecipesOverview from '../components/recipes/LatestRecipesOverview';
-import WeekListOverview from '../components/lists/WeekListOverview';
+import WeekListOverview from '../components/week/WeekListOverview';
 
 type Props = {
   navigation: any

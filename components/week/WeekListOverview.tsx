@@ -4,7 +4,7 @@ import CustomMediumText from '../customTexts/CustomMediumText';
 import listApi from '../../network/lib/list'
 import { IList } from '../../models/lists.model';
 import BasicScreenLoadingComponent from '../BasicScreenLoadingComponent';
-import ListComponent from './ListComponent';
+import SimplifiedListComponent from '../lists/SimplifiedListComponent';
 
 type Props = {
     navigation: any
@@ -28,7 +28,7 @@ const WeekListOverview: React.FC<Props> = ({navigation}) => {
             <CustomMediumText fontSize={23}>Week List</CustomMediumText>
             {
                 list ? 
-                <ListComponent navigation={navigation} listData={list} strechable={true} customContainerStyling={styles.listComponentStyling} />
+                <SimplifiedListComponent navigation={navigation} listData={list} strechable={true} customContainerStyling={styles.listComponentStyling} />
                 : <BasicScreenLoadingComponent />
             }
         </View>
