@@ -12,7 +12,7 @@ type Props = {
     customContainerStyling?: ViewStyle | ViewStyle[]
 }
 
-const ListComponent: React.FC<Props> = ({ navigation, listData, strechable, customContainerStyling }) => {
+const SimplifiedListComponent: React.FC<Props> = ({ navigation, listData, strechable, customContainerStyling }) => {
     return (
         <View style={[styles.listContainer, basicShadow, strechable ? styles.strechable : styles.fix, customContainerStyling]}>
             <ImageBackground imageStyle={styles.image} style={strechable ? styles.strechableImageContainer : styles.fixImageContainer} source={{ uri: listData.listPictureUrl }} />
@@ -30,10 +30,10 @@ const ListComponent: React.FC<Props> = ({ navigation, listData, strechable, cust
     )
 }
 
-export default ListComponent
+export default SimplifiedListComponent
 
 const styles = StyleSheet.create({
-    listContainer: {
+    listContainer: { 
         height: 180,
         backgroundColor: colors.white,
         borderRadius: 15,

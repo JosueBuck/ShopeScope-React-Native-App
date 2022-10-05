@@ -3,7 +3,7 @@ import React from 'react';
 import { ISimplifiedList } from '../../models/lists.model';
 import BasicOverviewComponent from '../BasicOverviewComponent';
 import BasicScreenLoadingComponent from '../BasicScreenLoadingComponent';
-import ListComponent from './ListComponent';
+import SimplifiedListComponent from './SimplifiedListComponent';
 
 type Props = {
     navigation: any,
@@ -16,7 +16,7 @@ const ListsOverviewComponent: React.FC<Props> = ({navigation, lists}) => {
         {
             lists ? 
             lists.map((list) => {
-              return <ListComponent navigation={navigation} listData={list} strechable={false} customContainerStyling={{marginBottom: 10}} key={list._id} />
+              return <SimplifiedListComponent navigation={navigation} listData={list} strechable={false} customContainerStyling={{marginBottom: 10}} key={list._id} />
             })
             : 
             <BasicScreenLoadingComponent />
