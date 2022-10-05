@@ -8,6 +8,9 @@ import ListsOverviewComponent from '../components/lists/ListsOverviewComponent';
 import BasicScreenWrapper from '../components/basics/BasicScreenWrapper';
 import BasisScreenTitle from '../components/basics/BasisScreenTitle';
 import BasicSearchComponent from '../components/basics/BasicSearchComponent';
+import BasicOverlayButton from '../components/basics/BasicOverlayButton';
+import { colors } from '../assets/globalStyling/colors';
+import { IconName } from '../assets/icons/iconNames';
 
 type Props = {
   navigation: any
@@ -35,6 +38,10 @@ const ListsOverviewScreen: React.FC<Props> = ({navigation}) => {
     console.log('loading...');
   }
 
+  const onPressAddList = () => {
+    console.log('add list');
+  }
+
   useEffect(() => {
     getUserId().then((userId) =>{
       if(userId) {
@@ -49,6 +56,7 @@ const ListsOverviewScreen: React.FC<Props> = ({navigation}) => {
       <BasisScreenTitle title='Your Lists' subTitle='Select on of your lists' />
       <BasicSearchComponent inputValue={textInput} onTextChange={setTextInput} onPressDelete={resetTextInput} onPressSearch={loadFilteredLists} />
       <ListsOverviewComponent navigation={navigation} lists={lists} />
+      <BasicOverlayButton onPress={onPressAddList} iconColor={colors.white} iconName={IconName.ADD} />
     </BasicScreenWrapper>
   )
 }
