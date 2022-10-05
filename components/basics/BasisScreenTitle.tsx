@@ -1,7 +1,8 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import CustomMediumText from './customTexts/CustomMediumText';
-import PressableIcon from './icons/PressableIcon';
+import CustomMediumText from '../customTexts/CustomMediumText';
+import PressableIcon from '../icons/PressableIcon';
+
 
 type Props = {
     title: string, 

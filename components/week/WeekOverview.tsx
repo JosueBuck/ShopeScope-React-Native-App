@@ -12,7 +12,8 @@ import CloseWeekOverviewButton from './CloseWeekOverviewButton';
 import DayRecipePopUp from './DayRecipePopUp';
 import { colors } from '../../assets/globalStyling/colors';
 import { IconName } from '../../assets/icons/iconNames';
-import BasicScreenLoadingComponent from '../BasicScreenLoadingComponent';
+import BasicScreenLoadingComponent from '../basics/BasicScreenLoadingComponent';
+
 
 type Props = {
     navigation: any

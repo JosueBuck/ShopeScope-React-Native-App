@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 import React from 'react';
 import { ISimplifiedList } from '../../models/lists.model';
-import BasicOverviewComponent from '../BasicOverviewComponent';
-import BasicScreenLoadingComponent from '../BasicScreenLoadingComponent';
+import BasicOverviewComponent from '../basics/BasicOverviewComponent';
 import SimplifiedListComponent from './SimplifiedListComponent';
+import BasicScreenLoadingComponent from '../basics/BasicScreenLoadingComponent';
 
 type Props = {
     navigation: any,

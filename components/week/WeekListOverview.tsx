@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import CustomMediumText from '../customTexts/CustomMediumText';
 import listApi from '../../network/lib/list'
 import { IList } from '../../models/lists.model';
-import BasicScreenLoadingComponent from '../BasicScreenLoadingComponent';
 import SimplifiedListComponent from '../lists/SimplifiedListComponent';
+import BasicScreenLoadingComponent from '../basics/BasicScreenLoadingComponent';
 
 type Props = {
     navigation: any

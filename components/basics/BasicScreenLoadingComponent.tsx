@@ -1,7 +1,7 @@
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
+import { ActivityIndicator, StyleSheet, View } from 'react-native'
 import React from 'react'
-import CustomMediumText from './customTexts/CustomMediumText'
-import { colors } from '../assets/globalStyling/colors'
+import CustomMediumText from '../customTexts/CustomMediumText'
+import { colors } from '../../assets/globalStyling/colors'
 
 const BasicScreenLoadingComponent: React.FC = () => {
     return (

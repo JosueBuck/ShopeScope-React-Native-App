@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import BasicScreenWrapper from '../components/BasicScreenWrapper';
-import BasisScreenTitle from '../components/BasisScreenTitle';
+
+
 import { ISimplifiedUserRecipe, RecipeType } from '../models/recipes.model';
 import { getUserId } from '../state-management/AsyncStorageCalls';
 import recipeApi from '../network/lib/recipes';
-import BasicSearchComponent from '../components/BasicSearchComponent';
+
 import { IconName } from '../assets/icons/iconNames';
 import RecipeFilterPopUp from '../components/recipes/RecipeFilterPopUp';
 import RecipesOverviewComponent from '../components/recipes/RecipesOverviewComponent';
+import BasicScreenWrapper from '../components/basics/BasicScreenWrapper';
+import BasisScreenTitle from '../components/basics/BasisScreenTitle';
+import BasicSearchComponent from '../components/basics/BasicSearchComponent';
 
 type Props = {
   navigation: any

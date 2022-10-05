@@ -1,4 +1,4 @@
-import { Modal, Pressable, ScrollView, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
+import { Modal, ScrollView, StyleSheet, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { IDayRecipe } from '../../models/recipes.model';
 import PressableIcon from '../icons/PressableIcon';
@@ -32,7 +32,7 @@ const DayRecipePopUp: React.FC<Props> = ({ dayRecipe, onClose }) => {
                 <View style={[styles.contentContainer, basicShadow]}>
                     <ScrollView horizontal={false} style={styles.scrollView}>
                         <View style={styles.titleTextSection}>
-                            <CustomBoldText fontSize={18}>{dayRecipe?.recipeName}</CustomBoldText>
+                            <CustomBoldText fontSize={18}>{dayRecipe?.name}</CustomBoldText>
                             <CustomMediumText fontSize={15}>{dayRecipe?.garnish}</CustomMediumText>
                         </View>
 

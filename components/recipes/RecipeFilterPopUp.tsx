@@ -1,12 +1,12 @@
 import { Modal, SafeAreaView, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native';
 import React from 'react';
-import BasisScreenTitle from '../BasisScreenTitle';
 import { recipeTypes } from '../../data/recipeFilterData';
 import TypeFilterComponent from './TypeFilterComponent';
 import { RecipeType } from '../../models/recipes.model';
 import PressableIcon from '../icons/PressableIcon';
 import { IconName } from '../../assets/icons/iconNames';
 import { colors } from '../../assets/globalStyling/colors';
+import BasisScreenTitle from '../basics/BasisScreenTitle';
 
 type Props = {
     showModal: boolean,

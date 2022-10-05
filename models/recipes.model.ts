@@ -65,6 +65,11 @@ export interface IRecipe {
     recipeType: string[];
 }
 
+export interface IRecipeTypeData {
+    name: string,
+    recipeType: RecipeType
+}
+
 export interface ISimplifiedUserRecipe {
     _id: string, 
     name: string;

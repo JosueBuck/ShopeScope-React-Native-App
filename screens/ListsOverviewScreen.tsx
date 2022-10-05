@@ -1,12 +1,13 @@
 import { StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import BasicScreenWrapper from '../components/BasicScreenWrapper';
-import BasisScreenTitle from '../components/BasisScreenTitle';
-import BasicSearchComponent from '../components/BasicSearchComponent';
+
 import listApi from '../network/lib/list';
 import { getUserId } from '../state-management/AsyncStorageCalls';
 import { ISimplifiedList } from '../models/lists.model';
 import ListsOverviewComponent from '../components/lists/ListsOverviewComponent';
+import BasicScreenWrapper from '../components/basics/BasicScreenWrapper';
+import BasisScreenTitle from '../components/basics/BasisScreenTitle';
+import BasicSearchComponent from '../components/basics/BasicSearchComponent';
 
 type Props = {
   navigation: any
