@@ -13,7 +13,7 @@ type Props = {
 const WeekListOverview: React.FC<Props> = ({navigation}) => {
 
     const [list, setList] = useState<IList | null>(null);
-    const userWeekListId: string = '63369de07a3ca6fd96e9e359';
+    const userWeekListId: string = '633ce13474f5ca5504bc508d';
 
     useEffect(() => {
         listApi.getList(userWeekListId).then((list) => {

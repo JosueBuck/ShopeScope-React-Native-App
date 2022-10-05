@@ -14,7 +14,7 @@ type Props = {
 
 const HomeScreen: React.FC<Props> = ({ navigation }) => {
 
-  const userIdPlaceholder: string = '63327aa74c96ea744f2d24c6';
+  const userIdPlaceholder: string = '633ce10f74f5ca5504bc507e';
 
   const storeUserIdData = async (value: string) => {
     try {

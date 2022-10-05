@@ -26,7 +26,7 @@ const WeekOverview: React.FC<Props> = ({ navigation }) => {
     const [selectedDayTime, setSelectedDayTime] = useState<string>('');
     const [dayTimeRecipes, setDayTimeRecipes] = useState<IDayRecipe[] | null>(null);
     const [selectedDayRecipe, setSelectedDayRecipe] = useState<IDayRecipe | null>(null);
-    const userWeekListId: string = '63342cd60edbb709518e1e3f';
+    const userWeekListId: string = '633ce13474f5ca5504bc508d';
 
 
     const closeWeekOverview = () => {
