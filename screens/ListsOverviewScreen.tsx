@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import listApi from '../network/lib/list';
 import { getUserId } from '../state-management/AsyncStorageCalls';
-import { ISimplifiedList } from '../models/lists.model';
+import { IList, ISimplifiedList } from '../models/lists.model';
 import ListsOverviewComponent from '../components/lists/ListsOverviewComponent';
 import BasicScreenWrapper from '../components/basics/BasicScreenWrapper';
 import BasisScreenTitle from '../components/basics/BasisScreenTitle';
@@ -19,7 +19,7 @@ type Props = {
 const ListsOverviewScreen: React.FC<Props> = ({navigation}) => {
 
   const [userId, setUserId] = useState<string | null>(null);
-  const [lists, setLists] = useState<ISimplifiedList[] | null>(null);
+  const [lists, setLists] = useState<ISimplifiedList[] | IList[] | null>(null);
   const [textInput, setTextInput] = useState<string>('');
 
   const loadUserLists = (_userId: string) => {
@@ -32,10 +32,20 @@ const ListsOverviewScreen: React.FC<Props> = ({navigation}) => {
 
   const resetTextInput = () => {
     setTextInput('');
+    if(userId) {
+      loadUserLists(userId);
+    }
   }
 
   const loadFilteredLists = () => {
-    console.log('loading...');
+    if (userId) {
+      listApi.getUserListsWithFilter(userId, textInput).then((lists) => {
+        if(lists) {
+          setLists(lists);
+        }
+      });
+    }
+    
   }
 
   const onPressAddList = () => {

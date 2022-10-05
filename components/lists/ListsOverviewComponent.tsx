@@ -1,13 +1,13 @@
 import { StyleSheet } from 'react-native';
 import React from 'react';
-import { ISimplifiedList } from '../../models/lists.model';
+import { IList, ISimplifiedList } from '../../models/lists.model';
 import BasicOverviewComponent from '../basics/BasicOverviewComponent';
 import SimplifiedListComponent from './SimplifiedListComponent';
 import BasicScreenLoadingComponent from '../basics/BasicScreenLoadingComponent';
 
 type Props = {
     navigation: any,
-    lists: ISimplifiedList[] | null
+    lists: ISimplifiedList[] | IList[] | null
 }
 
 const ListsOverviewComponent: React.FC<Props> = ({navigation, lists}) => {

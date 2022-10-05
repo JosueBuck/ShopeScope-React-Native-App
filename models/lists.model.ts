@@ -6,6 +6,12 @@ export interface IListsResponseDTO {
     statusCode: number
 }
 
+export interface IFilteredListsResponseDTO {
+    message: string,
+    responseData: IList[],
+    statusCode: number
+}
+
 export interface ISimplifiedListsResponseDTO {
     message: string,
     responseData: ISimplifiedList[],
