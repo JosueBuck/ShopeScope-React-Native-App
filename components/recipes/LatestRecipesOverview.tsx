@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import CustomMediumText from '../customTexts/CustomMediumText';
 import SimplifiedRecipeComponent from './SimplifiedRecipeComponent';
 import { ISimplifiedUserRecipe } from '../../models/recipes.model';
-import BasicScreenLoadingComponent from '../BasicScreenLoadingComponent';
 import recipeApi from '../../network/lib/recipes';
 import { getUserId } from '../../state-management/AsyncStorageCalls';
+import BasicScreenLoadingComponent from '../basics/BasicScreenLoadingComponent';
 
 type Props = {
   navigation: any

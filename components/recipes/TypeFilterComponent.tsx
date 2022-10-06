@@ -1,9 +1,10 @@
 import { Pressable, StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import { IRecipeTypeData } from '../../models/recipes.model';
+
 import { basicShadow } from '../../assets/globalStyling/shadows';
 import { colors } from '../../assets/globalStyling/colors';
 import CustomMediumText from '../customTexts/CustomMediumText';
+import { IRecipeTypeData } from '../../models/recipes.model';
 
 type Props = {
     filterData: IRecipeTypeData,

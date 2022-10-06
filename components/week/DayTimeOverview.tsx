@@ -1,5 +1,5 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import React from 'react';
 import CustomMediumText from '../customTexts/CustomMediumText';
 import { IDay } from '../../models/week.model';
 import DayTimeComponent from './DayTimeComponent';

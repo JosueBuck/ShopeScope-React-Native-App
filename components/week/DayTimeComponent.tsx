@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import CustomMediumText from '../customTexts/CustomMediumText';
 import { colors } from '../../assets/globalStyling/colors';

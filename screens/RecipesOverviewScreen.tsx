@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import BasicScreenWrapper from '../components/BasicScreenWrapper';
-import BasisScreenTitle from '../components/BasisScreenTitle';
+
+
 import { ISimplifiedUserRecipe, RecipeType } from '../models/recipes.model';
 import { getUserId } from '../state-management/AsyncStorageCalls';
 import recipeApi from '../network/lib/recipes';
-import BasicSearchComponent from '../components/BasicSearchComponent';
+
 import { IconName } from '../assets/icons/iconNames';
 import RecipeFilterPopUp from '../components/recipes/RecipeFilterPopUp';
 import RecipesOverviewComponent from '../components/recipes/RecipesOverviewComponent';
+import BasicScreenWrapper from '../components/basics/BasicScreenWrapper';
+import BasisScreenTitle from '../components/basics/BasisScreenTitle';
+import BasicSearchComponent from '../components/basics/BasicSearchComponent';
+import BasicOverlayButton from '../components/basics/BasicOverlayButton';
+import { colors } from '../assets/globalStyling/colors';
 
 type Props = {
   navigation: any
@@ -79,6 +84,10 @@ const RecipesOverviewScreen: React.FC<Props> = ({ navigation }) => {
     handleFilter(textInput, _filterTypes);
   }
 
+  const onPressAddRecipe = () => {
+    console.log('add recipe');
+  }
+
   useEffect(() => {
     getUserId().then((userId) => {
       if (userId) {
@@ -99,6 +108,7 @@ const RecipesOverviewScreen: React.FC<Props> = ({ navigation }) => {
       <BasicSearchComponent inputValue={textInput} onTextChange={setTextInput} iconFunc={setShowFilterTypes} iconName={IconName.FILTER} onPressSearch={handleFilter} onPressDelete={resetTextInput} />
       <RecipesOverviewComponent navigation={navigation} recipes={recipes} />
       <RecipeFilterPopUp showModal={showFilterTypes} onClose={handleClosePopUp} onResetFilterType={resetFilterTypes} selectedFilterTypes={selectedFilterTypes} onPressFilterType={onPressFilterType} />
+      <BasicOverlayButton onPress={onPressAddRecipe} iconName={IconName.ADD} iconColor={colors.white} />
     </BasicScreenWrapper>
   )
 }

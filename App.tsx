@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
 import RecipesOverviewScreen from './screens/RecipesOverviewScreen';
-import ListsScreen from './screens/ListsScreen';
+import ListsOverviewScreen from './screens/ListsOverviewScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
@@ -41,7 +41,7 @@ function TabNavigation(): JSX.Element {
       })}>
         <Tab.Screen options={{title: 'Recipes'}} name='RecipesOverview' component={RecipesOverviewScreen} />
         <Tab.Screen options={{title: 'Home'}} name='Home' component={HomeScreen} />
-        <Tab.Screen options={{title: 'Lists'}} name='ListsOverview' component={ListsScreen} />
+        <Tab.Screen options={{title: 'Lists'}} name='ListsOverview' component={ListsOverviewScreen} />
       </Tab.Navigator>
   )
 }

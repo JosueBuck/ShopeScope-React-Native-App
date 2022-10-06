@@ -1,9 +1,10 @@
 import { StyleSheet, TextInput, View } from 'react-native';
 import React from 'react';
-import { colors } from '../assets/globalStyling/colors';
-import { basicShadow } from '../assets/globalStyling/shadows';
-import PressableIcon from './icons/PressableIcon';
-import { IconName } from '../assets/icons/iconNames';
+import { basicShadow } from '../../assets/globalStyling/shadows';
+import PressableIcon from '../icons/PressableIcon';
+import { IconName } from '../../assets/icons/iconNames';
+import { colors } from '../../assets/globalStyling/colors';
+
 
 type Props = {
     inputValue: string, 

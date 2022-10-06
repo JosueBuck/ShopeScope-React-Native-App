@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { IDay } from '../../models/week.model'
 import CustomMediumText from '../customTexts/CustomMediumText'

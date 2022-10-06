@@ -1,4 +1,4 @@
-import { ICreateList, IListSettings, IListsResponseDTO } from "../../models/lists.model";
+import { ICreateList, IFilteredListsResponseDTO, IListSettings, IListsResponseDTO, ISimplifiedListsResponseDTO } from "../../models/lists.model";
 import { IDayRecipe, IListItem, INewListItem, IRecipeListIngredient } from "../../models/recipes.model";
 import axiosClient from "../apiClient";
 import { triggerErrorMessage } from "../useApi";
@@ -83,9 +83,27 @@ function getList(_listId: string) {
 }
 
 function getSimplifiedUserLists(_userId: string) {
-    return axiosClient.request<IListsResponseDTO>({
+    return axiosClient.request<ISimplifiedListsResponseDTO>({
         method: 'get',
         url: `${basicPath}/getSimplifiedUserLists/${_userId}`,
+    }).then((response) => {
+        console.log(response.data.responseData);
+        return response.data.responseData;
+    }).catch(error => {
+        triggerErrorMessage(error.response.data);
+        console.log(error);
+        return null;
+    }
+    );
+}
+
+function getUserListsWithFilter(_userId: string, _searchValue: string) {
+    return axiosClient.request<IFilteredListsResponseDTO>({
+        method: 'post',
+        url: `${basicPath}/getUserListsWithFilter/${_userId}`,
+        data: {
+            searchValue: _searchValue
+        }
     }).then((response) => {
         console.log(response.data.responseData);
         return response.data.responseData;
@@ -199,6 +217,7 @@ export default {
     deleteList, 
     getList,
     getSimplifiedUserLists,
+    getUserListsWithFilter,
     addWeekRecipesToList,
     removeWeekRecipesFromList,
     updateWeekRecipeIngredientInList,

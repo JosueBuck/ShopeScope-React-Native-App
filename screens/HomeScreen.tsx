@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
-import BasicScreenWrapper from '../components/BasicScreenWrapper';
-import BasisScreenTitle from '../components/BasisScreenTitle';
+
+
 import { colors } from '../assets/globalStyling/colors';
 import { IconName } from '../assets/icons/iconNames';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import WeekOverview from '../components/week/WeekOverview';
 import LatestRecipesOverview from '../components/recipes/LatestRecipesOverview';
-import WeekListOverview from '../components/lists/WeekListOverview';
+import WeekListOverview from '../components/week/WeekListOverview';
+import BasicScreenWrapper from '../components/basics/BasicScreenWrapper';
+import BasisScreenTitle from '../components/basics/BasisScreenTitle';
 
 type Props = {
   navigation: any
@@ -14,7 +16,7 @@ type Props = {
 
 const HomeScreen: React.FC<Props> = ({ navigation }) => {
 
-  const userIdPlaceholder: string = '63327aa74c96ea744f2d24c6';
+  const userIdPlaceholder: string = '633ce10f74f5ca5504bc507e';
 
   const storeUserIdData = async (value: string) => {
     try {

@@ -2,8 +2,8 @@ import { StyleSheet } from 'react-native';
 import React from 'react';
 import { ISimplifiedUserRecipe } from '../../models/recipes.model';
 import SimplifiedRecipeComponent from './SimplifiedRecipeComponent';
-import BasicScreenLoadingComponent from '../BasicScreenLoadingComponent';
-import BasicOverviewComponent from '../BasicOverviewComponent';
+import BasicOverviewComponent from '../basics/BasicOverviewComponent';
+import BasicScreenLoadingComponent from '../basics/BasicScreenLoadingComponent';
 
 type Props = {
   navigation: any,

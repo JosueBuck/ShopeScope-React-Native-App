@@ -7,7 +7,7 @@ type Props = {
 
 const BasicOverviewComponent: React.FC<Props> = ({ children }) => {
     return (
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView style={styles.scollview} showsVerticalScrollIndicator={false}>
             <View style={styles.recipeContainer}>
                 {children}
             </View>
@@ -19,8 +19,12 @@ export default BasicOverviewComponent
 
 const styles = StyleSheet.create({
     recipeContainer: {
+        overflow: 'visible',
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'space-between'
+    },
+    scollview: {
+        overflow: 'visible'
     }
 })

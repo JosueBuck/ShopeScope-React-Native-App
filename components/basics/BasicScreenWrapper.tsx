@@ -2,7 +2,7 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { colors } from '../assets/globalStyling/colors';
+import { colors } from '../../assets/globalStyling/colors';
 
 type Props = {
     children: JSX.Element | JSX.Element[],
